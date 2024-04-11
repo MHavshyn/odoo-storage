@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_DB: odoo
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: password123
+    ports:
+      - '5436:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data:cached
+
+volumes:
+  db-data:
